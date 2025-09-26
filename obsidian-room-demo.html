@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Room - Ultra-Luxury Pool Tables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Variables */
+        :root {
+            --obsidian-black: #0a0a0a;
+            --obsidian-charcoal: #1a1a1a;
+            --obsidian-slate: #2a2a2a;
+            --gold-primary: #d4af37;
+            --gold-light: #f4e4a6;
+            --gold-dark: #b8941f;
+            --emerald-green: #2d5016;
+            --emerald-light: #3d6b20;
+            --pearl-white: #faf9f6;
+            --shadow-dark: rgba(0, 0, 0, 0.8);
+            --shadow-light: rgba(212, 175, 55, 0.2);
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--obsidian-black);
+            color: var(--pearl-white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        .luxury-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #d4af37, #f4e4a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .luxury-subheading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: var(--gold-primary);
+        }
+
+        .luxury-text {
+            font-family: 'Inter', sans-serif;
+            color: var(--pearl-white);
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Button Styles */
+        .luxury-button {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--obsidian-black);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .luxury-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-light);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+        }
+
+        .luxury-button-outline {
+            background: transparent;
+            color: var(--gold-primary);
+            border: 2px solid var(--gold-primary);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            padding: 14px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .luxury-button-outline:hover {
+            background: var(--gold-primary);
+            color: var(--obsidian-black);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10,10,10,0.8) 0%, rgba(26,26,26,0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(212,175,55,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(45,80,22,0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+
+        .scroll-mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid var(--gold-primary);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-mouse::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background-color: var(--gold-primary);
+            border-radius: 2px;
+            animation: scroll-indicator 2s ease-in-out infinite;
+        }
+
+        @keyframes scroll-indicator {
+            0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            50% { transform: translateX(-50%) translateY(8px); opacity: 0.5; }
+            100% { transform: translateX(-50%) translateY(16px); opacity: 0; }
+        }
+
+        .scroll-text {
+            color: var(--gold-primary);
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(10,10,10,0.98) 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 3rem;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat p {
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: linear-gradient(145deg, rgba(26,26,26,0.8), rgba(42,42,42,0.6));
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px var(--shadow-dark);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+        }
+
+        .card h3 {
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(10,10,10,0.98) 0%, rgba(26,26,26,0.95) 50%, rgba(45,80,22,0.1) 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gold-primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(26,26,26,0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            color: var(--pearl-white);
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+        }
+
+        .contact-info {
+            background: linear-gradient(145deg, rgba(45,80,22,0.2), rgba(26,26,26,0.8));
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item h4 {
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .section { padding: 80px 0; }
+            .hero h1 { font-size: 3rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 2.5rem; }
+        }
+
+        /* Decorative lines */
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="luxury-heading animate-fade-in-up">OBSIDIAN ROOM</h1>
+            <h2 class="luxury-subheading animate-fade-in-up">Ultra-Luxury 8-Ball Pool Tables</h2>
+            <p class="luxury-text animate-fade-in-up">
+                Where championship meets craftsmanship. Each table is a masterpiece of precision engineering, 
+                handcrafted from the finest materials to elevate your game to legendary status.
+            </p>
+            <div class="hero-buttons animate-fade-in-up">
+                <a href="#products" class="luxury-button">Explore Collection</a>
+                <a href="#contact" class="luxury-button-outline">Request Consultation</a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator animate-float" onclick="scrollToSection('about')">
+            <div class="scroll-mouse"></div>
+            <div class="scroll-text">Scroll</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="luxury-heading">Heritage & Craftsmanship</h2>
+                <p class="luxury-text">Three generations of master craftsmen, dedicated to perfection in every detail</p>
+            </div>
+            
+            <div class="about-grid">
+                <div>
+                    <h3 class="luxury-subheading" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Our Story</h3>
+                    <p class="luxury-text" style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        Founded in 1952, Obsidian Room began as a small workshop where master craftsman 
+                        Giovanni Rossi handcrafted his first championship-quality pool table. What started 
+                        as a passion for precision has evolved into the world's most prestigious luxury 
+                        billiards manufacturer.
+                    </p>
+                    <p class="luxury-text" style="margin-bottom: 2rem; font-size: 1.1rem;">
+                        Each Obsidian Room table is a testament to unwavering dedication to excellence. 
+                        We source only the finest hardwoods, precision-engineered slate, and premium 
+                        felt to create tables that don't just play perfectly—they transform spaces into 
+                        sanctuaries of sophistication.
+                    </p>
+
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>70+</h3>
+                            <p>Years Legacy</p>
+                        </div>
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Tables Crafted</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Handcrafted</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">⚡</div>
+                            <div>
+                                <h3>Precision Engineering</h3>
+                                <p class="luxury-text">Every measurement calculated to the thousandth of an inch, ensuring tournament-level play consistency.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">💎</div>
+                            <div>
+                                <h3>Premium Materials</h3>
+                                <p class="luxury-text">Exclusively sourced Italian slate, aged hardwoods, and championship-grade felt for unparalleled quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">🔨</div>
+                            <div>
+                                <h3>Artisan Craftsmanship</h3>
+                                <p class="luxury-text">Master craftsmen with decades of experience hand-finish each table to perfection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products" style="background: linear-gradient(135deg, rgba(10,10,10,0.98) 0%, rgba(26,26,26,0.95) 100%);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="luxury-heading">Signature Collection</h2>
+                <p class="luxury-text">Discover our meticulously crafted pool tables, each designed to be the centerpiece of luxury spaces</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div class="card">
+                    <div style="height: 200px; background: linear-gradient(135deg, #d4af37, #b8941f); border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <h3 style="color: #0a0a0a; font-size: 1.5rem; font-family: 'Playfair Display', serif;">THE EMPEROR</h3>
+                    </div>
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">The Emperor</h3>
+                    <p style="color: var(--pearl-white); opacity: 0.7; margin-bottom: 1rem;">Championship Series</p>
+                    <p style="color: var(--pearl-white); font-size: 1.25rem; font-weight: 300;">From $25,000</p>
+                </div>
+                
+                <div class="card">
+                    <div style="height: 200px; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #d4af37; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <h3 style="color: #d4af37; font-size: 1.2rem; font-family: 'Playfair Display', serif;">OBSIDIAN ELITE</h3>
+                    </div>
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">The Obsidian Elite</h3>
+                    <p style="color: var(--pearl-white); opacity: 0.7; margin-bottom: 1rem;">Professional Series</p>
+                    <p style="color: var(--pearl-white); font-size: 1.25rem; font-weight: 300;">From $18,000</p>
+                </div>
+                
+                <div class="card">
+                    <div style="height: 200px; background: linear-gradient(135deg, #b8941f, #d4af37); border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <h3 style="color: #0a0a0a; font-size: 1.2rem; font-family: 'Playfair Display', serif;">HERITAGE</h3>
+                        <h3 style="color: #0a0a0a; font-size: 1.2rem; font-family: 'Playfair Display', serif;">CLASSIC</h3>
+                    </div>
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">The Heritage Classic</h3>
+                    <p style="color: var(--pearl-white); opacity: 0.7; margin-bottom: 1rem;">Artisan Series</p>
+                    <p style="color: var(--pearl-white); font-size: 1.25rem; font-weight: 300;">From $12,000</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: var(--pearl-white); margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">Each table is custom-crafted to your specifications</p>
+                <a href="#contact" class="luxury-button">Request Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="luxury-heading">Begin Your Journey</h2>
+                <p class="luxury-text">Experience the Obsidian Room difference. Visit our showroom or schedule a private consultation.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="card" style="padding: 3rem;">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 2rem; text-align: center; font-size: 1.8rem;">Request Consultation</h3>
+                    <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Our experts will help you design the perfect pool table for your space.</p>
+                    
+                    <form>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" required>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel">
+                            </div>
+                            <div class="form-group">
+                                <label>Table Interest</label>
+                                <input type="text" placeholder="e.g., The Emperor, Custom Design">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="4" placeholder="Tell us about your space, preferences, and any special requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="luxury-button" style="width: 100%;">Request Consultation</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3 style="color: var(--gold-primary); margin-bottom: 2rem;">Visit Our Showroom</h3>
+                    
+                    <div class="contact-item">
+                        <h4>📍 Address</h4>
+                        <p>1250 Fifth Avenue<br>New York, NY 10029<br>United States</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>📞 Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>✉️ Email</h4>
+                        <p>inquiries@obsidianroom.com</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>🕒 Hours</h4>
+                        <p>Monday - Friday: 10:00 AM - 7:00 PM<br>
+                        Saturday: 10:00 AM - 6:00 PM<br>
+                        Sunday: 12:00 PM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(212, 175, 55, 0.1); text-align: center;">
+            <p style="opacity: 0.6; margin-bottom: 1rem;">© 2024 Obsidian Room. All rights reserved. | Crafting excellence since 1952.</p>
+            <p style="color: var(--gold-primary); font-style: italic;">"Where championship meets craftsmanship."</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Initialize scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-fade-in-up');
+            animatedElements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = `all 0.8s ease-out ${index * 0.2}s`;
+                observer.observe(el);
+            });
+
+            // Trigger animations after a short delay
+            setTimeout(() => {
+                animatedElements.forEach((el) => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+            }, 500);
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your inquiry. We will contact you within 24 hours.');
+        });
+    </script>
+</body>
+</html>
